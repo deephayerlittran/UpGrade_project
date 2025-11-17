@@ -8,3 +8,7 @@ export const getAllEmployees = () => {
 export const createEmployee = (data: Omit<Employee, "id">) => {
   return employeeRepository.create(data);
 };
+
+export const countEmployeesByDepartment = (departmentId: string) => {
+  return employeeRepository.countByDepartment(departmentId);
+};

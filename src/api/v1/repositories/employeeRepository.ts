@@ -12,5 +12,11 @@ export const employeeRepository = {
   async create(data: Omit<Employee, "id">) {
     const ref = await collection.add(data);
     return { id: ref.id, ...data };
+  },
+
+
+  async countByDepartment(departmentId: string) {
+    const snapshot = await collection.where("departmentId", "==", departmentId).get();
+    return snapshot.size;
   }
 };
