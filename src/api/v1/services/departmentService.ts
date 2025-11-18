@@ -1,5 +1,5 @@
 import { departmentRepository } from "../repositories/departmentRepository";
-import type { Department } from "../types/Department";
+import type { Department } from "../types/department";
 
 export const departmentService = {
   getAll() {
@@ -20,5 +20,5 @@ export const departmentService = {
 
   remove(id: string) {
     return departmentRepository.remove(id);
-  }
+  },
 };

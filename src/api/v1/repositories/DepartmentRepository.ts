@@ -1,5 +1,5 @@
 import { db } from "../config/firebase";
-import type { Department } from "../types/Department";
+import type { Department } from "../types/department";
 
 const collection = db.collection("departments");
 

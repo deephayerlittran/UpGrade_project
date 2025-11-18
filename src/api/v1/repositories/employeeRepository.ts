@@ -1,5 +1,5 @@
 import { db } from "../config/firebase";
-import type { Employee } from "../types/Employee";
+import type { Employee } from "../types/employee";
 
 const collection = db.collection("employees");
 
