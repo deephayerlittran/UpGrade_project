@@ -1,12 +1,14 @@
-import admin from "firebase-admin";
-import path from "path";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 
-const serviceAccountPath = path.resolve(__dirname, "../../../../test-project-1a599-firebase-adminsdk-fbsvc-4bfe817687.json");
+const firebaseConfig = {
+  apiKey: "AIzaSyxxxxxxx",
+  authDomain: "test-project-1a599.firebaseapp.com",
+  projectId: "test-project-1a599",
+  storageBucket: "test-project-1a599.appspot.com",
+  messagingSenderId: "558211643485",
+  appId: "1:558211643485:web:xxxxxxx"
+};
 
-if (!admin.apps.length) {
-  admin.initializeApp({
-    credential: admin.credential.cert(require(serviceAccountPath)),
-  });
-}
-
-export const db = admin.firestore();
+firebase.initializeApp(firebaseConfig);
+export const db = firebase.firestore();
